@@ -1,20 +1,17 @@
-import { useState } from 'react';
-import Header from './Componentes/Header/Header.jsx';
-import './App.css'; 
+import { times } from './data'; 
+import { Card } from './Componentes/cardsTimes/cardsTimes.jsx';
+import './App.css';
 
 function App() {
-  const [busca, setBusca] = useState('');
-
   return (
-    <div className="app-dark-mode">
-      <Header busca={busca} setBusca={setBusca} />
-
-      {/* Abaixo do Header, depois vamos colocar a parte dos Filtros 
-        e a Listagem (Galeria) dos times!
-      */}
-      <main className="conteudo-principal">
-        <p>Você está pesquisando por: <strong>{busca || "Todos os times"}</strong></p>
-      </main>
+    <div className="container">
+      <h1>História em Taças</h1>
+      
+      <div className="lista-times">
+        {times.map((time) => (
+          <Card key={time.id} item={time} />
+        ))}
+      </div>
     </div>
   );
 }
