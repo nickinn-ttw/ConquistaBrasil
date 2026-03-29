@@ -1,17 +1,11 @@
-import { times } from './data'; 
-import { Card } from './Componentes/cardsTimes/cardsTimes.jsx';
+import React from 'react';
+import ListaTimes from './components/ListaTimes';
 import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <h1>História em Taças</h1>
-      
-      <div className="lista-times">
-        {times.map((time) => (
-          <Card key={time.id} item={time} />
-        ))}
-      </div>
+    <div className="App">
+      <ListaTimes />
     </div>
   );
 }
