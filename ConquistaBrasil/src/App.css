@@ -1,67 +1,50 @@
-/* Configuração Geral do Fundo */
-body {
-  background-color: #121212; /* Dark Mode */
-  color: white;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1 {
-  color: #ffd700; /* Dourado para o Título */
-  margin-bottom: 40px;
-  text-transform: uppercase;
-}
-
-/* --- A Mágica da Lista (Grid) --- */
 .lista-times {
-  display: grid;
-  /* Cria colunas que se ajustam sozinhas (mínimo 250px cada) */
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px; /* Espaço entre os cards */
-}
-
-/* --- Estilo do Card --- */
-.card {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: 12px;
+  text-align: center;
+  font-family: Arial, sans-serif;
   padding: 20px;
-  transition: transform 0.3s, border-color 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* Efeito ao passar o mouse */
-.card:hover {
-  transform: translateY(-10px);
-  border-color: #ffd700;
+.times-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
+
+.card {
+  border: 1px solid #000; /* Borda preta simples */
+  padding: 15px;
+  width: 200px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
 
 .card img {
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  margin-bottom: 15px;
-  /* Sombra leve no escudo */
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+  margin-bottom: 10px;
 }
 
-.card h2 {
-  font-size: 1.4rem;
+
+.card h3 {
   margin: 10px 0;
+  font-size: 1.2rem;
 }
 
 .card p {
-  color: #bbb;
   margin: 5px 0;
+  font-size: 0.9rem;
+} 
+
+.lista-times_header {
+  text-align: center;
+  margin-bottom: 60px; 
+  padding-top: 20px;
 }
 
-.card strong {
-  color: #fff;
+.lista-times_header h2 {
+  margin-bottom: 10px;
 }

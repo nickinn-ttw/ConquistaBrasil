@@ -1,5 +1,4 @@
-import React from 'react';
-import ListaTimes from './components/ListaTimes';
+import ListaTimes from './Componentes/listaTimes/listaTimes';
 import './App.css';
 
 function App() {
