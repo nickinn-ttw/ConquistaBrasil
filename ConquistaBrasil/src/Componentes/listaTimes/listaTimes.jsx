@@ -1,13 +1,13 @@
 import React from 'react';
-import TimeCard from './TimeCard';
-import { times } from './dados';
+import TimeCard from '../cardsTimes/cardsTimes.jsx'; 
+import { times } from '../../data.jsx';
 
 const ListaTimes = () => {
   return (
     <div className="lista-times">
       <div className="lista-times__header">
-        <h2>🏆 Campeões Libertadores</h2>
-        <p>Os maiores vencedores da América do Sul</p>
+        <h2>🏆 História em taças 🏆</h2>
+        <p>Os Campeões Brasileiros Do Século XXI </p>
       </div>
       
       <div className="times-grid">
