@@ -1,6 +1,5 @@
-import React from 'react';
 import TimeCard from '../cardsTimes/cardsTimes.jsx'; 
-import { times } from '../../data.jsx';
+import  { times }  from '../../data.jsx';
 
 const ListaTimes = () => {
   return (
@@ -14,7 +13,6 @@ const ListaTimes = () => {
         {times.map((time) => (  
           <TimeCard
             key={time.id}
-            id={time.id}
             nome={time.nome}
             regiao={time.regiao}
             estado={time.estado}
