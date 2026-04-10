@@ -1,5 +1,5 @@
-import TimeCard from '../cardsTimes/cardsTimes.jsx'; 
 import  { times }  from '../../data.jsx';
+import CardsTimes from '../cardsTimes/cardsTimes.jsx';
 
 const ListaTimes = ({ busca, filtroRegiao }) => {
     const timesFiltrados = times.filter((time) => {
