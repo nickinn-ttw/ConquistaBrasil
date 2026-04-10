@@ -1,23 +1,24 @@
-import ListaTimes from './Componentes/listaTimes/listaTimes';
-import './App.css';
-import BarraPesquisa from './Componentes/barraPesquisa/barraPesquisa';
 import { useState } from 'react';
-import Filter from './Componentes/Filter/Filter';
+import './App.css';
+
+import BarraPesquisa from './Components/BarraPesquisa/BarraPesquisa';
+import Filter from './Components/Filter/Filter';
+import ListaTimes from './Components/ListaTimes/ListaTimes';
 
 function App() {
-  const [busca, setBusca] = useState("")
+  const [busca, setBusca] = useState("");
   const [filtroRegiao, setFiltroRegiao] = useState("Todas");
 
   return (
     <div className="App">
-      <BarraPesquisa busca = {busca} setBusca = {setBusca}/>
+      <BarraPesquisa busca={busca} setBusca={setBusca} />
 
       <Filter
-        filtroRegiao={filtroRegiao} 
-        setFiltroRegiao={setFiltroRegiao} 
+        filtroRegiao={filtroRegiao}
+        setFiltroRegiao={setFiltroRegiao}
       />
 
-      <ListaTimes busca = {busca} filtroRegiao = {filtroRegiao}/>
+      <ListaTimes busca={busca} filtroRegiao={filtroRegiao} />
     </div>
   );
 }

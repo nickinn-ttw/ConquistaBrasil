@@ -1,50 +1,20 @@
-.lista-times {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.times-grid {
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.card {
-  border: 1px solid #000; 
-  padding: 15px;
-  width: 200px;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #000;
-}
-
-
-.card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-
-.card h3 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-} 
-
-.lista-times_header {
-  text-align: center;
-  margin-bottom: 60px; 
-  padding-top: 20px;
-}
-
-.lista-times_header h2 {
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
 }
