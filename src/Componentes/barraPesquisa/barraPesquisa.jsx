@@ -11,7 +11,7 @@ const BarraPesquisa = ({ busca, setBusca }) => {
       </div>
       
       <div className="busca-area">
-        <input
+        <input className="input-busca"
           type="text"
           placeholder="Pesquisar clube..."
           value={busca}

@@ -1,20 +1,217 @@
+#root {
+  max-width: 100% !important; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif; 
 }
 
-html, body, #root {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #f1f5f9;
+body {
+  background-color: #0f1115; 
+  color: #f1f5f9;
 }
 
 .App {
-  width: 100%;
   min-height: 100vh;
+}
+
+
+.header-container {
+  background-color: rgba(15, 17, 21, 0.85); 
+  backdrop-filter: blur(12px); 
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e293b;
+  position: sticky; 
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; 
+}
+
+.logo-area h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.2; 
+  padding: 10px 0;  
+  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
+}
+
+.logo-area span {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px; 
+  padding-left: 5px; 
+}
+
+.busca-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+}
+
+.input-busca {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #1e293b;
+  background-color: #161b22;
+  color: #f1f5f9;
+  width: 280px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+.input-busca:focus {
+  border-color: #3b82f6;
+  width: 320px; 
+  background-color: #0d1117;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.busca-area p {
+  position: absolute;
+  bottom: -22px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: #3b82f6;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background-color: #0d1117;
+  border-bottom: 1px solid #1e293b;
+}
+
+.filtros-container label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filtros-container select {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #161b22;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.filtros-container select:hover,
+.filtros-container select:focus {
+  border-color: #3b82f6;
+}
+
+.lista-times {
+  padding: 50px 4%; 
+  width: 100%; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  gap: 30px;
+  margin-top: 20px;
+  width: 100%; 
+}
+
+.card {
+  background-color: #161b22;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #3b82f6;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #3b82f6;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.card h3 {
+  color: #f1f5f9;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: left;
+  padding: 8px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.card p:last-child {
+  border-bottom: none;
 }
