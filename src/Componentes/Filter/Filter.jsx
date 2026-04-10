@@ -1,5 +1,4 @@
 const Filter = ({ filtroRegiao, setFiltroRegiao }) => {
-const [,] = useState("Todas");
   
   return (
     <div className="filtros-container">
