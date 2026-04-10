@@ -1,3 +1,4 @@
+import './CardsTimes.css';
 const CardsTimes = (props) => {
   return (
     <div className="card">

@@ -9,6 +9,4 @@ export const times = [
   { id: 8, nome: "Fluminense", regiao: "Sudeste", estado: "RJ", titulos: 2, imagem: "https://logodetimes.com/times/fluminense/logo-fluminense-4096.png" },
   { id: 9, nome: "Athletico-Paranaense", regiao: "Sul", estado: "PR", titulos: 1, imagem: "https://logodetimes.com/times/atletico-paranaense/logo-atletico-paranaense-4096.png" },
   { id: 10, nome: "Atlético Mineiro", regiao: "Sudeste", estado: "MG", titulos: 1, imagem: "https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-4096.png" },
-  { id: 11, nome: "Atlético Mineiro2", regiao: "Sudeste2", estado: "MG2", titulos: 12, imagem: "https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-4096.png" },
-  
 ];

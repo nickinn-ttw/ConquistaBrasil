@@ -1,3 +1,4 @@
+import './BarraPesquisa.css';
 const BarraPesquisa = ({ busca, setBusca }) => {
 
   const digitarBusca = (event) =>{

@@ -1,3 +1,4 @@
+import './ListaTimes.css';
 import { times } from '../../data.jsx';
 import CardsTimes from '../CardsTimes/CardsTimes.jsx'; 
 
