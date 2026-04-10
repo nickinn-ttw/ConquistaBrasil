@@ -1,14 +1,23 @@
 import './BarraPesquisa.css';
-const BarraPesquisa = ({ busca, setBusca }) => {
 
-  const digitarBusca = (event) =>{
-    setBusca(event.target.value)
-  }
+const BarraPesquisa = ({ busca, setBusca }) => {
+  
+  // Função que captura o valor digitado e atualiza o estado global
+  const aoDigitar = (event) => {
+    setBusca(event.target.value);
+  };
+
   return (
-    <header className="header-container">
+    <div className="search-header">
+      
+
       <div className="logo-area">
-        <h1>🏆 Campeões Brasileiros</h1>
-        <span>2000 à 2025</span>
+        <h1>
+          <span className="emoji">🏆</span> 
+          História em taças 
+          <span className="emoji">🏆</span>
+        </h1>
+        <p className="subtitle">Os Campeões Brasileiros Do Século XXI (2000 à 2025)</p>
       </div>
       
       <div className="busca-area">
@@ -16,11 +25,10 @@ const BarraPesquisa = ({ busca, setBusca }) => {
           type="text"
           placeholder="Pesquisar clube..."
           value={busca}
-          onChange= {digitarBusca}
+          onChange={aoDigitar}
         />
-        <p>{busca}</p>
       </div>
-    </header>
+    </div>
   );
 };
 

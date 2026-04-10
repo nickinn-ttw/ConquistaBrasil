@@ -1,12 +1,17 @@
 import './CardsTimes.css';
-const CardsTimes = (props) => {
+
+const CardsTimes = ({ imagem, nome, regiao, estado, titulos }) => {
   return (
     <div className="card">
-      <img src={props.imagem} alt={props.nome} style={{ width: '100px' }} />
-      <h3>{props.nome}</h3>
-      <p>Região: {props.regiao}</p>
-      <p>Estado: {props.estado}</p>
-      <p>Títulos: {props.titulos}</p>
+      <img src={imagem} alt={nome} />
+      
+      <h3>{nome}</h3>
+      
+      <div className="card-info">
+        <p><strong>Região:</strong> {regiao}</p>
+        <p><strong>Estado:</strong> {estado}</p>
+        <p><strong>Títulos:</strong> {titulos}</p>
+      </div>
     </div>
   );
 };

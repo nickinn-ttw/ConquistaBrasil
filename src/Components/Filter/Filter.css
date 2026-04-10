@@ -1,0 +1,22 @@
+.filtros-container {
+  width: 100%;
+  margin: 10px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.filtros-container label {
+  color: #64748b;
+  font-weight: bold;
+}
+
+.filtros-container select {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  color: #1e293b;
+  cursor: pointer;
+}

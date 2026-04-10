@@ -1,38 +1,34 @@
 import './ListaTimes.css';
 import { times } from '../../data.jsx';
-import CardsTimes from '../CardsTimes/CardsTimes.jsx'; 
+import CardsTimes from '../CardsTimes/CardsTimes.jsx';
 
 const ListaTimes = ({ busca, filtroRegiao }) => {
+  
   const timesFiltrados = times.filter((time) => {
-    const BuscaTime = time.nome.toLowerCase().includes(busca.toLowerCase());
-    const BuscaRegiao = filtroRegiao === "Todas" || time.regiao === filtroRegiao;
-    return BuscaTime && BuscaRegiao;
+    const buscaNome = time.nome.toLowerCase().includes(busca.toLowerCase());
+    const buscaRegiao = filtroRegiao === "Todas" || time.regiao === filtroRegiao;
+    return buscaNome && buscaRegiao;
+  });
+
+  const timesOrdenados = [...timesFiltrados].sort((a, b) => {
+    return a.nome.localeCompare(b.nome);
   });
 
   return (
     <div className="lista-times">
       <div className="times-grid">
-        <div>
-          <h2>🏆 História em taças 🏆</h2>
-          <p>Os Campeões Brasileiros Do Século XXI</p>
-        </div>
-      </div>
-
-      <div className="times-grid">
-        {timesFiltrados.map((time) => (
+        {timesOrdenados.map((time) => (
           <CardsTimes 
             key={time.id}
-            nome={time.nome}
-            regiao={time.regiao}
-            estado={time.estado}
-            titulos={time.titulos}
-            imagem={time.imagem}
+            {...time}
           />
         ))}
       </div>
 
-      {timesFiltrados.length === 0 && (
-        <p>Nenhum time encontrado para essa busca.</p>
+      {timesOrdenados.length === 0 && (
+        <div className="erro-busca">
+          <p>Nenhum time encontrado para essa busca.</p>
+        </div>
       )}
     </div>
   );
