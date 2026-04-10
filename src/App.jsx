@@ -1,8 +1,8 @@
-import ListaTimes from './Componentes/listaTimes/listaTimes';
-import './App.css';
-import BarraPesquisa from './Componentes/barraPesquisa/barraPesquisa';
 import { useState } from 'react';
-import Filter from './Componentes/Filter/Filter';
+import './App.css';
+import ListaTimes from './Components/ListaTimes/ListaTimes';
+import BarraPesquisa from './Components/BarraPesquisa/BarraPesquisa';
+import Filter from './Components/Filter/Filter';
 
 function App() {
   const [busca, setBusca] = useState("")

@@ -1,5 +1,5 @@
 import { times } from '../../data.jsx';
-import CardsTimes from '../cardsTimes/cardsTimes.jsx'; 
+import CardsTimes from '../CardsTimes/CardsTimes.jsx'; 
 
 const ListaTimes = ({ busca, filtroRegiao }) => {
   const timesFiltrados = times.filter((time) => {
