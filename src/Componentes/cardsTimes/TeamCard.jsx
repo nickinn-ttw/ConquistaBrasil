@@ -1,4 +1,4 @@
-const CardsTimes = (props) => {
+const TeamCard = (props) => {
   return (
     <div className="card">
       <img src={props.imagem} alt={props.nome} style={{ width: '100px' }} />
@@ -10,4 +10,4 @@ const CardsTimes = (props) => {
   );
 };
 
-export default CardsTimes;
+export default TeamCard

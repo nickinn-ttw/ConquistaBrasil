@@ -1,32 +1,32 @@
 import { useState } from 'react';
 import './App.css';
 
-import BarraPesquisa from './Componentes/barraPesquisa/barraPesquisa';
+import SearchBarr from './Componentes/barraPesquisa/SearchBarr';
 import Filter from './Componentes/Filter/Filter';
-import ListaTimes from './Componentes/listaTimes/listaTimes';
+import TeamList from './Componentes/listaTimes/TeamList';
 
 function App() {
-  const [busca, setBusca] = useState("");
-  const [filtroRegiao, setFiltroRegiao] = useState([]);
-  const [filtroTitulo, setFiltroTitulo] = useState("Todos")
+  const [search, setSearch] = useState("");
+  const [regionFilter, setRegionFilter] = useState([]);
+  const [titleFilter, setTitleFilter] = useState("Todos")
 
   return (
     <div className="App">
-      <BarraPesquisa busca={busca} setBusca={setBusca} />
+      <SearchBarr search={search} setSearch={setSearch} />
 
       <Filter
-        filtroRegiao={filtroRegiao}
-        setFiltroRegiao={setFiltroRegiao}
+        regionFilter={regionFilter}
+        setRegionFilter={setRegionFilter}
 
-        filtroTitulo = {filtroTitulo}
-        setFiltroTitulo= {setFiltroTitulo}
+        titleFilter= {titleFilter}
+        setTitleFilter= {setTitleFilter}
 
        />
 
-      <ListaTimes 
-      busca = {busca} 
-      filtroRegiao = {filtroRegiao} 
-      filtroTitulo = {filtroTitulo}
+      <TeamList
+      search = {search} 
+      regionFilter = {regionFilter} 
+      titleFilter = {titleFilter}
       
       />
     </div>
