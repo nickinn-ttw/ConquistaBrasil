@@ -7,7 +7,7 @@ import ListaTimes from './Componentes/listaTimes/listaTimes';
 
 function App() {
   const [busca, setBusca] = useState("");
-  const [filtroRegiao, setFiltroRegiao] = useState("Todas");
+  const [filtroRegiao, setFiltroRegiao] = useState([]);
   const [filtroTitulo, setFiltroTitulo] = useState("Todos")
 
   return (

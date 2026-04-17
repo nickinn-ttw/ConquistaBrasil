@@ -1,5 +1,5 @@
 #root {
-  max-width: 100% !important; 
+  max-width: 100% !important;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -9,28 +9,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', 'Segoe UI', sans-serif; 
+  font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #0f1115; 
+  background-color: #0f1115;
   color: #f1f5f9;
+  overflow-x: hidden;
 }
 
 .App {
   min-height: 100vh;
+  width: 100%;
 }
 
-
 .header-container {
-  background-color: rgba(15, 17, 21, 0.85); 
-  backdrop-filter: blur(12px); 
-  padding: 20px 50px;
+  background-color: rgba(15, 17, 21, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 20px 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #1e293b;
-  position: sticky; 
+  position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -39,15 +40,15 @@ body {
 .logo-area {
   display: flex;
   flex-direction: column;
-  gap: 0px; 
+  gap: 0px;
 }
 
 .logo-area h1 {
   font-size: 2.6rem;
   font-weight: 900;
   letter-spacing: -1.5px;
-  line-height: 1.2; 
-  padding: 10px 0;  
+  line-height: 1.2;
+  padding: 10px 0;
   background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -59,8 +60,8 @@ body {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 5px; 
-  padding-left: 5px; 
+  letter-spacing: 5px;
+  padding-left: 5px;
 }
 
 .busca-area {
@@ -79,37 +80,32 @@ body {
   width: 280px;
   font-size: 1rem;
   outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
-
 .input-busca:focus {
   border-color: #3b82f6;
-  width: 320px; 
+  width: 320px;
   background-color: #0d1117;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
 }
 
-.busca-area p {
-  position: absolute;
-  bottom: -22px;
-  right: 10px;
-  font-size: 0.75rem;
-  color: #3b82f6;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-
 .filtros-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 25px;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 25px 4%;
   background-color: #0d1117;
   border-bottom: 1px solid #1e293b;
+}
+
+.grupo-select-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 250px;
 }
 
 .filtros-container label {
@@ -138,19 +134,88 @@ body {
   border-color: #3b82f6;
 }
 
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.tag-regiao {
+  background-color: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(59, 130, 246, 0.3);
+}
+
+.tag-regiao button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.tag-regiao button:hover {
+  color: #ff4757;
+}
+
 .lista-times {
-  padding: 50px 4%; 
-  width: 100%; 
+  padding: 50px 4%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 
+.lista-times h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  text-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.lista-times p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.lista-times p::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  border-radius: 4px;
+}
+
 .times-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
   margin-top: 20px;
-  width: 100%; 
+  width: 100%;
 }
 
 .card {
@@ -161,7 +226,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -179,7 +244,7 @@ body {
   left: 0;
   width: 100%;
   height: 4px;
-  background: #3b82f6;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }

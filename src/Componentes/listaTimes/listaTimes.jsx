@@ -4,8 +4,8 @@ import CardsTimes from "../cardsTimes/cardsTimes.jsx";
 const ListaTimes = ({ busca, filtroRegiao, filtroTitulo }) => {
   const timesFiltrados = times.filter((time) => {
   const BuscaTime = time.nome.toLowerCase().includes(busca.toLowerCase());
-  const BuscaRegiao = filtroRegiao === "Todas" || time.regiao === filtroRegiao;
-  const BuscaTitulo = filtroTitulo === "Todos" || time.titulos.toString() === filtroTitulo;
+ const BuscaRegiao = filtroRegiao.length === 0 || filtroRegiao.includes(time.regiao);
+ const BuscaTitulo = filtroTitulo === "Todos" || time.titulos.toString() === filtroTitulo;
   return BuscaTime && BuscaRegiao && BuscaTitulo;
   });
 
