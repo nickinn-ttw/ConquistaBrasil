@@ -9,6 +9,9 @@ function App() {
   const [search, setSearch] = useState("");
   const [regionFilter, setRegionFilter] = useState([]);
   const [titleFilter, setTitleFilter] = useState("Todos")
+  const [stateFilter, setStateFilter] = useState([]);
+  const [decadeFilter, setDecadeFilter] = useState([]);
+  const [yearFilter, setYearFilter] = useState("");
 
   return (
     <div className="App">
@@ -21,12 +24,23 @@ function App() {
         titleFilter= {titleFilter}
         setTitleFilter= {setTitleFilter}
 
+        stateFilter={stateFilter}
+        setStateFilter={setStateFilter}
+
+        decadeFilter={decadeFilter}
+        setDecadeFilter={setDecadeFilter}
+
+        yearFilter={yearFilter}
+        setYearFilter={setYearFilter}
        />
 
       <TeamList
       search = {search} 
       regionFilter = {regionFilter} 
       titleFilter = {titleFilter}
+      stateFilter={stateFilter}
+      decadeFilter={decadeFilter}
+      yearFilter={yearFilter}
       
       />
     </div>
