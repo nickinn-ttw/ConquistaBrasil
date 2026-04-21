@@ -1,6 +1,5 @@
-const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
-                stateFilter, setStateFilter, decadeFilter, setDecadeFilter,
-                yearFilter, setYearFilter }) => {
+const Filter = (
+  { regionFilter, setRegionFilter, titleFilter, setTitleFilter, stateFilter, setStateFilter, decadeFilter,setDecadeFilter, yearFilter, setYearFilter }) => {
 
   const addRegion = (event) => {
     const chosenRegion = event.target.value;
@@ -25,7 +24,8 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
     const chosenState = event.target.value;
     if (chosenState === "Todos") {
       setStateFilter([]);
-    } else if (!stateFilter.includes(chosenState)) {
+    } 
+    else if (!stateFilter.includes(chosenState)) {
       setStateFilter([...stateFilter, chosenState]);
     }
     event.target.value = "";
@@ -39,7 +39,8 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
     const chosenDecade = event.target.value;
     if (chosenDecade === "Todas") {
       setDecadeFilter([]);
-    } else if (!decadeFilter.includes(chosenDecade)) {
+    } 
+    else if (!decadeFilter.includes(chosenDecade)) {
       setDecadeFilter([...decadeFilter, chosenDecade]);
     }
     event.target.value = "";
@@ -101,6 +102,7 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
           <option value="MG">MG</option>
           <option value="PR">PR</option>
         </select>
+
         <div className="area-tags">
           {stateFilter?.map((state) => (
             <span key={state} className="tag tag-estado">
@@ -108,6 +110,7 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
             </span>
           ))}
         </div>
+
       </div>
     
      <div className="grupo-filtro">
@@ -119,6 +122,7 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
           <option value="2010s">10s</option>
           <option value="2020s">20s</option>
         </select>
+
         <div className="area-tags">
           {decadeFilter?.map((decade) => (
             <span key={decade} className="tag tag-decada">
@@ -126,12 +130,14 @@ const Filter = ({ regionFilter, setRegionFilter, titleFilter, setTitleFilter,
             </span>
           ))}
         </div>
+        
       </div>
     
       <div className="grupo-filtro">
         <label>Ano:</label>
         <select value={yearFilter || ""} onChange={searchYear}>
           <option value="">Todos</option>
+          <option value="2000">2000</option>
           <option value="2001">2001</option>
           <option value="2002">2002</option>
           <option value="2003">2003</option>

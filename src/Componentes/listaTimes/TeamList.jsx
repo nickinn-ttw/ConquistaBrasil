@@ -7,8 +7,8 @@ const TeamList = ({ search, regionFilter, titleFilter, stateFilter, decadeFilter
     const searchRegion = regionFilter.length === 0 || regionFilter.includes(time.regiao);
     const searchTitle = titleFilter === "Todos" || time.titulos.toString() === titleFilter;
     const searchState = stateFilter.length === 0 || stateFilter.includes(time.estado);
-    const searchDecade = decadeFilter.length === 0 || decadeFilter.includes(getDecade(time.anoConquista));
-    const searchYear = yearFilter === "" || time.anoConquista.toString() === yearFilter;
+    const searchDecade = decadeFilter.length === 0 || decadeFilter.some((chosenDecade) => time.decadas.includes(chosenDecade));
+    const searchYear = yearFilter === "" || !yearFilter || time.anoConquista.includes(yearFilter);
   
   return searchTeam && searchRegion && searchTitle && searchState && searchDecade && searchYear;
 });
