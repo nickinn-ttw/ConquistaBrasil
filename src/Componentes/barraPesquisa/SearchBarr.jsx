@@ -1,7 +1,7 @@
-const BarraPesquisa = ({ busca, setBusca }) => {
+const SearchBarr = ({ search, setSearch }) => {
 
-  const digitarBusca = (event) =>{
-    setBusca(event.target.value)
+  const typeSearch = (event) =>{
+    setSearch(event.target.value)
   }
   return (
     <header className="header-container">
@@ -14,13 +14,12 @@ const BarraPesquisa = ({ busca, setBusca }) => {
         <input className="input-busca"
           type="text"
           placeholder="Pesquisar clube..."
-          value={busca}
-          onChange= {digitarBusca}
+          value={search}
+          onChange= {typeSearch}
         />
-        <p>{busca}</p>
       </div>
     </header>
   );
 };
 
-export default BarraPesquisa;
+export default SearchBarr;

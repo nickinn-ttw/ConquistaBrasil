@@ -1,32 +1,46 @@
 import { useState } from 'react';
 import './App.css';
 
-import BarraPesquisa from './Componentes/barraPesquisa/barraPesquisa';
+import SearchBarr from './Componentes/barraPesquisa/SearchBarr';
 import Filter from './Componentes/Filter/Filter';
-import ListaTimes from './Componentes/listaTimes/listaTimes';
+import TeamList from './Componentes/listaTimes/TeamList';
 
 function App() {
-  const [busca, setBusca] = useState("");
-  const [filtroRegiao, setFiltroRegiao] = useState("Todas");
-  const [filtroTitulo, setFiltroTitulo] = useState("Todos")
+  const [search, setSearch] = useState("");
+  const [regionFilter, setRegionFilter] = useState([]);
+  const [titleFilter, setTitleFilter] = useState("Todos")
+  const [stateFilter, setStateFilter] = useState([]);
+  const [decadeFilter, setDecadeFilter] = useState([]);
+  const [yearFilter, setYearFilter] = useState("");
 
   return (
     <div className="App">
-      <BarraPesquisa busca={busca} setBusca={setBusca} />
+      <SearchBarr search={search} setSearch={setSearch} />
 
       <Filter
-        filtroRegiao={filtroRegiao}
-        setFiltroRegiao={setFiltroRegiao}
+        regionFilter={regionFilter}
+        setRegionFilter={setRegionFilter}
 
-        filtroTitulo = {filtroTitulo}
-        setFiltroTitulo= {setFiltroTitulo}
+        titleFilter= {titleFilter}
+        setTitleFilter= {setTitleFilter}
 
+        stateFilter={stateFilter}
+        setStateFilter={setStateFilter}
+
+        decadeFilter={decadeFilter}
+        setDecadeFilter={setDecadeFilter}
+
+        yearFilter={yearFilter}
+        setYearFilter={setYearFilter}
        />
 
-      <ListaTimes 
-      busca = {busca} 
-      filtroRegiao = {filtroRegiao} 
-      filtroTitulo = {filtroTitulo}
+      <TeamList
+      search = {search} 
+      regionFilter = {regionFilter} 
+      titleFilter = {titleFilter}
+      stateFilter={stateFilter}
+      decadeFilter={decadeFilter}
+      yearFilter={yearFilter}
       
       />
     </div>
