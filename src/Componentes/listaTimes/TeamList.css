@@ -1,0 +1,108 @@
+.lista-times {
+  width: 100%;
+  padding: 56px 48px 80px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* ── Título da seção ── */
+.lista-times h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: 10px;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text);
+
+  opacity: 0;
+  animation: fadeUp 0.6s 0.3s ease forwards;
+}
+
+/* Gradiente sutil apenas no texto */
+.lista-times h2 {
+  background: linear-gradient(135deg, #ffffff 40%, var(--green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtítulo ── */
+.lista-times > p {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 52px;
+  display: inline-block;
+  position: relative;
+
+  opacity: 0;
+  animation: fadeUp 0.6s 0.42s ease forwards;
+}
+
+.lista-times > p::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 999px;
+}
+
+/* ── Grid ── */
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2px;
+  width: 100%;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  opacity: 0;
+  animation: fadeUp 0.6s 0.54s ease forwards;
+}
+
+/* ── Estado vazio ── */
+.lista-times > p:last-child {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  color: var(--text-dim);
+  padding: 60px 0;
+  margin-bottom: 0;
+  animation: none;
+  opacity: 1;
+}
+
+.lista-times > p:last-child::after {
+  display: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .lista-times { padding: 40px 24px 60px; }
+  .times-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+
+@media (max-width: 500px) {
+  .lista-times { padding: 32px 16px 48px; }
+  .times-grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+}

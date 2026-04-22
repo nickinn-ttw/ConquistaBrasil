@@ -1,3 +1,5 @@
+import './SearchBarr.css';
+
 const SearchBarr = ({ search, setSearch }) => {
 
   const typeSearch = (event) =>{

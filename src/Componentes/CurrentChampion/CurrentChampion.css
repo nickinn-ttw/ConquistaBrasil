@@ -1,0 +1,218 @@
+.campeao-section {
+  width: 100%;
+  padding: 56px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #0d0508 0%, var(--bg) 60%);
+ 
+  opacity: 0;
+  animation: fadeUp 0.7s 0.15s ease forwards;
+}
+ 
+/* Faixa vermelha diagonal de fundo */
+.campeao-section::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -5%;
+  width: 55%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(200,0,0,0.06) 0%, transparent 60%);
+  transform: skewX(-12deg);
+  pointer-events: none;
+}
+ 
+/* Linha vermelha no topo */
+.campeao-section::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #cc0000, #ff4444, #cc0000, transparent);
+  opacity: 0.6;
+}
+ 
+/* Numero enorme de fundo */
+.campeao-bg-text {
+  position: absolute;
+  right: 280px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(80px, 14vw, 160px);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(200,0,0,0.08);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+ 
+/* ── Lado esquerdo (texto) ── */
+.campeao-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+ 
+.campeao-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #ff5555;
+  text-shadow: 0 0 12px rgba(255,60,60,0.4);
+}
+ 
+.campeao-nome {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+  color: var(--text);
+  background: none;
+  -webkit-text-fill-color: var(--text);
+}
+ 
+.campeao-ano {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+ 
+.campeao-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+ 
+.badge {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+ 
+.badge-regiao {
+  background: rgba(0,230,118,0.08);
+  border: 1px solid rgba(0,230,118,0.25);
+  color: var(--green);
+}
+ 
+.badge-estado {
+  background: rgba(41,121,255,0.08);
+  border: 1px solid rgba(41,121,255,0.25);
+  color: #82b1ff;
+}
+ 
+.badge-titulos {
+  background: rgba(255,214,0,0.08);
+  border: 1px solid rgba(255,214,0,0.25);
+  color: var(--gold);
+}
+ 
+/* ── Lado direito (escudo) ── */
+.campeao-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  z-index: 2;
+}
+ 
+/* Aneis de glow vermelho */
+.campeao-glow-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(200,0,0,0.25);
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+ 
+.ring-2 {
+  inset: -20px;
+  border-color: rgba(200,0,0,0.12);
+  animation-delay: 0.8s;
+}
+ 
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%       { transform: scale(1.08); opacity: 0.5; }
+}
+ 
+/* Escudo flutuando */
+.campeao-escudo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 30px rgba(200,0,0,0.45))
+    drop-shadow(0 8px 24px rgba(0,0,0,0.7));
+  animation: float 3.5s ease-in-out infinite;
+}
+ 
+@keyframes float {
+  0%, 100% { transform: translateY(0);    }
+  50%       { transform: translateY(-10px); }
+}
+ 
+/* Corona acima do escudo */
+.campeao-corona {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 8px rgba(255,214,0,0.7));
+  animation: crownBounce 2s ease-in-out infinite;
+  z-index: 3;
+}
+ 
+@keyframes crownBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0)    rotate(-5deg); }
+  50%       { transform: translateX(-50%) translateY(-5px) rotate(5deg);  }
+}
+ 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+/* ── Responsivo ── */
+@media (max-width: 700px) {
+  .campeao-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .campeao-badges { justify-content: center; }
+  .campeao-bg-text { display: none; }
+  .campeao-right { width: 180px; height: 180px; }
+  .campeao-escudo { width: 140px; height: 140px; }
+}
+ 

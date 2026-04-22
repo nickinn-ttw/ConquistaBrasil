@@ -1,0 +1,130 @@
+/* ── Header sticky ── */
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 9, 10, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+
+  /* Linha neon no topo */
+  box-shadow:
+    0 1px 0 rgba(0,230,118,0.25),
+    0 4px 24px rgba(0,0,0,0.5);
+}
+
+/* Ponto verde piscando */
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--green) 30%, var(--gold) 60%, var(--green) 80%, transparent 100%);
+  opacity: 0.8;
+}
+
+/* ── Logo ── */
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logo-area h1 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: var(--text);
+  /* Sem gradiente — limpo e forte */
+  filter: none;
+  -webkit-text-fill-color: var(--text);
+  background: none;
+  -webkit-background-clip: unset;
+  padding: 0;
+}
+
+/* Emoji do troféu com brilho dourado */
+.logo-area h1 .trofeu {
+  filter: drop-shadow(0 0 6px rgba(255,214,0,0.6));
+}
+
+.logo-area span {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding-left: 2px;
+}
+
+/* ── Campo de busca ── */
+.busca-area {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Ícone de lupa */
+.busca-area::before {
+  content: '⌕';
+  position: absolute;
+  left: 16px;
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  pointer-events: none;
+  z-index: 1;
+  line-height: 1;
+}
+
+.input-busca {
+  padding: 10px 20px 10px 44px;
+  width: 280px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-pill);
+  color: var(--text);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  outline: none;
+  transition: width 0.3s ease, border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.input-busca::placeholder {
+  color: var(--text-dim);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.input-busca:focus {
+  width: 340px;
+  border-color: var(--green);
+  background: rgba(0,230,118,0.05);
+  box-shadow: 0 0 0 3px rgba(0,230,118,0.10);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 700px) {
+  .header-container {
+    padding: 0 20px;
+    height: 60px;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 20px;
+    gap: 12px;
+  }
+  .input-busca { width: 100%; }
+  .input-busca:focus { width: 100%; }
+  .busca-area { width: 100%; }
+}

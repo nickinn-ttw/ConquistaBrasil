@@ -26,8 +26,8 @@ export const times = [
     nome: "Flamengo", 
     regiao: "Sudeste", 
     estado: "RJ", 
-    titulos: 3, 
-    anoConquista:["2009", "2019", "2020"], 
+    titulos: 4, 
+    anoConquista:["2009", "2019", "2020", "2025"], 
     imagem: "https://logodetimes.com/times/flamengo/logo-flamengo-4096.png",
     decadas: ["2000s", "2010s", "2020s"] 
   },
@@ -107,5 +107,18 @@ export const times = [
     anoConquista: ["2021"], 
     imagem: "https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-4096.png",
     decadas: ["2020s"] 
+  },
+
+
+  { 
+    id: 11, 
+    nome: "Botafogo", 
+    regiao: "Sudeste", 
+    estado: "RJ", 
+    titulos: 1, 
+    anoConquista: ["2024"], 
+    imagem: "https://logodetimes.com/times/botafogo/logo-botafogo-4096.png",
+    decadas: ["2020s"] 
   }
+
 ];

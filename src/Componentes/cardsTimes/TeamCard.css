@@ -1,0 +1,166 @@
+/* ── Card base ── */
+.card {
+  background: var(--bg);
+  padding: 44px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.35s ease;
+
+  opacity: 0;
+  animation: cardReveal 0.5s ease forwards;
+}
+
+/* Entrada escalonada */
+.card:nth-child(1)  { animation-delay: 0.06s; }
+.card:nth-child(2)  { animation-delay: 0.11s; }
+.card:nth-child(3)  { animation-delay: 0.16s; }
+.card:nth-child(4)  { animation-delay: 0.21s; }
+.card:nth-child(5)  { animation-delay: 0.26s; }
+.card:nth-child(6)  { animation-delay: 0.31s; }
+.card:nth-child(7)  { animation-delay: 0.36s; }
+.card:nth-child(8)  { animation-delay: 0.41s; }
+.card:nth-child(9)  { animation-delay: 0.46s; }
+.card:nth-child(10) { animation-delay: 0.51s; }
+
+/* Linha neon no topo — aparece no hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green), var(--gold), var(--green), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+/* Glow de fundo no hover */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 60% at 50% 0%, rgba(0,230,118,0.07), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  background: #0b1118;
+}
+
+.card:hover::before { transform: scaleX(1); }
+.card:hover::after  { opacity: 1; }
+
+/* ── Escudo ── */
+.card img {
+  width: 120px !important;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 22px;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.7)) saturate(0.9);
+  transition:
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.12) translateY(-6px);
+  filter: drop-shadow(0 12px 28px rgba(0,230,118,0.22)) saturate(1.15) brightness(1.05);
+}
+
+/* ── Nome do clube ── */
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+/* Underline animado */
+.card h3::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  margin: 6px auto 0;
+  border-radius: 999px;
+  transition: width 0.38s ease;
+}
+
+.card:hover h3 {
+  color: var(--green);
+  text-shadow: 0 0 18px rgba(0,230,118,0.4);
+}
+
+.card:hover h3::after { width: 60%; }
+
+/* ── Parágrafos de info ── */
+.card p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.card p:last-child {
+  border-bottom: none;
+}
+
+/* Destaque no campo de Títulos */
+.card p:last-child {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(255,214,0,0.18);
+  border-radius: var(--radius-md);
+  color: var(--gold);
+  font-size: 0.88rem;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card:hover p:last-child {
+  background: rgba(255,214,0,0.12);
+  border-color: rgba(255,214,0,0.35);
+  box-shadow: 0 0 20px rgba(255,214,0,0.12);
+}
+
+/* ── Animação de entrada ── */
+@keyframes cardReveal {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ── Responsivo ── */
+@media (max-width: 500px) {
+  .card { padding: 32px 16px 26px; }
+  .card img { width: 88px !important; height: 88px; }
+}

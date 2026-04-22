@@ -1,3 +1,5 @@
+import './Filter.css';
+
 const Filter = (
   { regionFilter, setRegionFilter, titleFilter, setTitleFilter, stateFilter, setStateFilter, decadeFilter,setDecadeFilter, yearFilter, setYearFilter }) => {
 

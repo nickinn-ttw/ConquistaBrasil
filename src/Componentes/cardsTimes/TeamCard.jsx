@@ -1,3 +1,5 @@
+import './TeamCard.css';
+
 const TeamCard = (props) => {
   return (
     <div className="card">
