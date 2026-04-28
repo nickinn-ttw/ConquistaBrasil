@@ -8,6 +8,7 @@ const Ordenar = ({ ordenar, setOrdenar }) => {
     { value: "recenteMenos", label: "Menos Recente" },
     { value: "titulosMais",  label: "Mais Titulos"  },
     { value: "titulosMenos", label: "Menos Titulos" },
+    { value: "favorito", label: " Ver Favoritos" },
   ];
 
   return (

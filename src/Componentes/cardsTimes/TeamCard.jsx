@@ -1,6 +1,8 @@
 import './TeamCard.css';
 
+
 const TeamCard = (props) => {
+
   return (
     <div className="card">
       <img src={props.imagem} alt={props.nome} style={{ width: '100px' }} />
@@ -8,6 +10,7 @@ const TeamCard = (props) => {
       <p>Região: {props.regiao}</p>
       <p>Estado: {props.estado}</p>
       <p>Títulos: {props.titulos}</p>
+      <p>Favoritar {props.favorito}</p>
     </div>
   );
 };

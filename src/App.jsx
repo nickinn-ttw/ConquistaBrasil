@@ -15,7 +15,8 @@ function App() {
   const [decadeFilter, setDecadeFilter] = useState([]);
   const [yearFilter, setYearFilter] = useState("");
   const [ordenar, setOrdenar] = useState("titulosMais");
- 
+  
+
   return (
     <div className="App">
       <SearchBarr search={search} setSearch={setSearch} />

@@ -30,6 +30,9 @@ const TeamList = ({ search, regionFilter, titleFilter, stateFilter, decadeFilter
         return a.titulos - b.titulos;
       default:
         return b.titulos - a.titulos;
+      case "favoritador":
+        return a.favorite - b.favorite;
+    
     }
   });
  

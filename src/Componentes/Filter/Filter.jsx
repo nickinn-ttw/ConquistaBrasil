@@ -1,7 +1,7 @@
 import './Filter.css';
 
 const Filter = (
-  { regionFilter, setRegionFilter, titleFilter, setTitleFilter, stateFilter, setStateFilter, decadeFilter,setDecadeFilter, yearFilter, setYearFilter }) => {
+  { regionFilter, setRegionFilter, titleFilter, setTitleFilter, stateFilter, setStateFilter, decadeFilter,setDecadeFilter, yearFilter, setYearFilter}) => {
 
   const addRegion = (event) => {
     const chosenRegion = event.target.value;
@@ -55,6 +55,12 @@ const Filter = (
    const searchYear = (event) => {
     setYearFilter(event.target.value);
   };
+
+
+const addFavorite = (event) => {
+    setFavorite(event.target.value);
+};
+
 
 
 
@@ -169,6 +175,10 @@ const Filter = (
       </div>    
 
     </div>
+
+
+          
+
   );
 };
 

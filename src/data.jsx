@@ -7,7 +7,8 @@ export const times = [
     titulos: 4, 
     anoConquista: ["2016", "2018", "2022", "2023"], 
     imagem: "https://logodetimes.com/times/palmeiras/logo-palmeiras-4096.png",
-    decadas: ["2010s", "2020s"] 
+    decadas: ["2010s", "2020s"] ,
+    favorito: true
   },
 
   { 
@@ -18,7 +19,8 @@ export const times = [
     titulos: 2, 
     anoConquista: ["2002", "2004"], 
     imagem: "https://logodetimes.com/times/santos/logo-santos-4096.png",
-    decadas: ["2000s"] 
+    decadas: ["2000s"],
+    favorito: true
   },
 
   { 
@@ -29,7 +31,8 @@ export const times = [
     titulos: 4, 
     anoConquista:["2009", "2019", "2020", "2025"], 
     imagem: "https://logodetimes.com/times/flamengo/logo-flamengo-4096.png",
-    decadas: ["2000s", "2010s", "2020s"] 
+    decadas: ["2000s", "2010s", "2020s"] ,
+    favorito: false
   },
 
   { 
@@ -40,7 +43,8 @@ export const times = [
     titulos: 4, 
     anoConquista: ["2005", "2011", "2015", "2017"], 
     imagem: "https://logodetimes.com/times/corinthians/logo-corinthians-4096.png",
-    decadas: ["2000s", "2010s"] 
+    decadas: ["2000s", "2010s"] ,
+    favorito: false
   },
 
   { 
@@ -51,7 +55,8 @@ export const times = [
     titulos: 3, 
     anoConquista: ["2006", "2007", "2008"], 
     imagem: "https://logodetimes.com/times/sao-paulo/logo-sao-paulo-4096.png",
-    decadas: ["2000s"] 
+    decadas: ["2000s"] ,
+    favorito: false
   },
 
   { 
@@ -62,7 +67,8 @@ export const times = [
     titulos: 3, 
     anoConquista: ["2003", "2013", "2014"], 
     imagem: "https://logodetimes.com/times/cruzeiro/logo-cruzeiro-4096.png",
-    decadas: ["2000s", "2010s"] 
+    decadas: ["2000s", "2010s"] ,
+    favorito: false
   },
 
   { 
@@ -73,7 +79,7 @@ export const times = [
     titulos: 1, 
     anoConquista:["2000"], 
     imagem: "https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-4096.png",
-    decadas: ["2000s"] 
+    decadas: ["2000s"] ,
   },
 
   { 
@@ -119,6 +125,7 @@ export const times = [
     anoConquista: ["2024"], 
     imagem: "https://logodetimes.com/times/botafogo/logo-botafogo-4096.png",
     decadas: ["2020s"] 
+  
   }
 
 ];
